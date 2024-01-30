@@ -1,0 +1,75 @@
+.register-backgroud {
+    background: #d5d5d5;
+    height: 100vh;
+    .register-container {
+        max-width: 400px;
+        background-color: white;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-height: 600px;
+        margin: auto;
+        .register-content {
+            padding: 30px;
+            .text-register {
+                text-align: center;
+                font-weight: 600;
+                font-size: 24px;
+                padding-top: 10px;
+            }
+            .register-input {
+                display: flex;
+                flex-direction: column;
+                margin: 8px;
+                .form-control {
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+                .parent-input-icon {
+                    width: 100%;
+                }
+                .icon-register {
+                    position: absolute;
+                    right: 8px;
+                }
+                .icon-register_ConfirmPassword {
+                    position: absolute;
+                    right: 8px;
+                }
+                label {
+                    margin: 5px;
+                }
+                .custom-input-Password {
+                    position: relative;
+                    display: contents;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            .btn-register {
+                width: 100%;
+                margin: 10px 0;
+                height: 30px;
+                border-radius: 15px;
+                outline: none;
+                border: none;
+                color: white;
+                background: #008748;
+                cursor: pointer;
+            }
+            .sign-in {
+                color: blue;
+                cursor: pointer;
+            }
+            .social-register {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+    }
+}
