@@ -6,7 +6,6 @@ const DefaultComponent = ({children}) => {
         <div>
             <HeaderComponent/>
             {children}
-
         </div>
 
     )

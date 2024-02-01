@@ -6,11 +6,11 @@ import * as UserService from '../../services/UserService';
 import*as message from '../../components/Message/Message'
 import {jwtDecode} from 'jwt-decode';
 import {EyeFilled, EyeInvisibleFilled} from '@ant-design/icons';
+import LoadingComponent from "../../components/LoadingComponent/LoadingComponent";
 
 
 const SignInPage = () => {
     const navigate = useNavigate();
-    // const [Username, setUsername] = useState('')
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
     const [Latitude, setLatitude] = useState('');
@@ -20,13 +20,9 @@ const SignInPage = () => {
         navigate('/register')
     }
 
-    // const handleOnChangeUsername = (value) => {
-    //     setUsername(value)
-    // }
 
     const handleOnChangeEmail = (value) => {
         setEmail(value)
-
     }
 
     const handleOnChangePassword = (value) => {
@@ -84,6 +80,8 @@ const SignInPage = () => {
             message.success('Đăng nhập thành công')
             localStorage.setItem('access_token', JSON.stringify(data?.jwt));
             navigate('/');
+        } else if(isError){
+            message.error('Mật khẩu hoạc email không đúng')
         }
         if(data?.access_token){
             const decoded = jwtDecode(data?.access_token);
@@ -92,6 +90,7 @@ const SignInPage = () => {
     }, [data]);
 
     return(
+        <LoadingComponent isLoading={isLoading}>
         <div className='login-backgroud'>
         <div className='login-container'>
             <div className='login-content row'>
@@ -124,15 +123,27 @@ const SignInPage = () => {
 
                 </div>
                
+             
                 <div className='col-12'>
                 <button className='btn-login' onClick={handleSignIn}>Login</button>
                 </div>
-                <div className='col-12'>
-                    <span className='Forgot-password'>Bạn chưa có tài khoản? <span className="sign-up" onClick={handleSignUp}>Đăng ký</span></span>
+               
+                <div className='col-12 adcv'>
+                    <div className="col-6">
+                        <span className='Forgot-password'>Bạn chưa có tài khoản? <span className="sign-up" onClick={handleSignUp}>Đăng ký</span></span>  
+
+                    </div>
+
+                    <div className="col-6">
+                        <span className=''>Quên mật khẩu</span>  
+
+                    </div>
+                   
                 </div>
             </div>
         </div>
-    </div>
+        </div>
+        </LoadingComponent>
     )
     
 

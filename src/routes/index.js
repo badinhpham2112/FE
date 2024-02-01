@@ -1,3 +1,4 @@
+import ListPostComponent from "../components/LisPostComponent/ListPostComponent";
 import HomePage from "../pages/HomePage/HomePage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import SignInPage from "../pages/SignInPage/SignInPage";
@@ -20,6 +21,11 @@ export const routes = [{
         path: '/register',
         page: SignUpPage,
         isShowHeader: false
+    },
+    {
+        path: '/forum/group',
+        page: ListPostComponent,
+        isShowHeader: true
     },
     {
         path: '*',
